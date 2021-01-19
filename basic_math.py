@@ -92,7 +92,7 @@ def get_median(number_list):
             median (int): parameter number_list 숫자들의 중간값
 
         Examples:
-            >>> number_list = [39, 54, 32, 11, 99]
+            >>> number_list = 
             >>> import basic_math as bm
             >>> bm.get_median(number_list)
             39
@@ -100,9 +100,10 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    if len(number_list) % 2 == 1:
-        median = number_list[len(number_list)//2]
+    number_list.sort()
+    l = len(number_list)
+    if l % 2 == 1:
+        median = number_list[l//2]
     else:
-        median = sum(number_list[len(number_list)//2:len(number_list)//2 + 1]) / 2
+        median = sum(number_list[(l//2)-1:(l//2)+1]) / 2
     return median
-    
