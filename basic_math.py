@@ -24,7 +24,12 @@ def get_greatest(number_list):
             >>> bm.get_greatest(number_list)
             99
     """
-    greatest_number = None
+    _max = number_list[0]
+    for x in number_list:
+        if x > _max:
+            _max = x
+
+    greatest_number = _max
     return greatest_number
 
 
@@ -45,7 +50,12 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
+    _min = number_list[0]
+    for x in number_list:
+        if x < _min:
+            _min = x
+
+    smallest_number = _min
     return smallest_number
 
 
@@ -66,7 +76,7 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
+    mean = sum(number_list) / len(number_list)
     return mean
 
 
@@ -82,7 +92,7 @@ def get_median(number_list):
             median (int): parameter number_list 숫자들의 중간값
 
         Examples:
-            >>> number_list = [39, 54, 32, 11, 99]
+            >>> number_list = 
             >>> import basic_math as bm
             >>> bm.get_median(number_list)
             39
@@ -90,5 +100,10 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = None
+    number_list.sort()
+    l = len(number_list)
+    if l % 2 == 1:
+        median = number_list[l//2]
+    else:
+        median = sum(number_list[(l//2)-1:(l//2)+1]) / 2
     return median
